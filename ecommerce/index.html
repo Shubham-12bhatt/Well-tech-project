@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellTech - Ayurvedic Medicines</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>WellTech<span>Ayurveda</span></h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="about.html">About Ayurveda</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="ayurvedic-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Natural Ayurvedic Solutions</h1>
+                <p>Ancient wisdom for modern wellness. Discover our carefully sourced ayurvedic medicines.</p>
+                <a href="#products" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2>Browse by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="herbs">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm6B6lHZRRcqUzdrbJL_J42OCo1HhLbi4Dzw&s" alt="Herbs & Supplements">
+                    <h3>Herbs & Supplements</h3>
+                </div>
+                <div class="category-card" data-category="oils">
+                    <img src="https://cdn.pixabay.com/photo/2017/06/08/22/17/essential-oils-2385087_640.jpg" alt="Essential Oils">
+                    <h3>Essential Oils</h3>
+                </div>
+                <div class="category-card" data-category="formulations">
+                    <img src="https://pankajakasthuri.in/cdn/shop/articles/blog_23-01-2020-26_1024x1024.png?v=1694432430" alt="Ayurvedic Formulations">
+                    <h3>Ayurvedic Formulations</h3>
+                </div>
+                <div class="category-card" data-category="skincare">
+                    <img src="https://m.media-amazon.com/images/I/71XWCuCvlEL.jpg" alt="Natural Skincare">
+                    <h3>Natural Skincare</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="bestseller">Best Sellers</button>
+                <button class="filter-btn" data-filter="new">New Arrivals</button>
+                <button class="filter-btn" data-filter="sale">On Sale</button>
+            </div>
+            <div class="product-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            <div class="load-more">
+                <button class="btn">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Why Choose Ayurvedic Medicine?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Natural Ingredients</h3>
+                    <p>Our products use only natural, high-quality ingredients sourced responsibly.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-history"></i>
+                    <h3>Ancient Wisdom</h3>
+                    <p>Based on 5,000+ years of Ayurvedic knowledge and practices.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Holistic Balance</h3>
+                    <p>Focuses on balancing mind, body, and spirit for complete wellness.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science-Backed</h3>
+                    <p>Traditional remedies supported by modern scientific research.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join Our Wellness Community</h2>
+                <p>Subscribe to receive ayurvedic tips, product updates, and exclusive offers.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>WellTech Ayurveda</h3>
+                    <p>Bringing the ancient wisdom of Ayurveda to modern wellness solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="orders.html">Order Tracking</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Wellness Avenue, Healthy City</li>
+                        <li><i class="fas fa-phone"></i> +91 9674007430</li>
+                        <li><i class="fas fa-envelope"></i> info@welltechayurveda.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellTech Ayurveda. All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

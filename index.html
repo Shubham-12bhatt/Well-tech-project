@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>WellTech</h1>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Consultations</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Lifestyle Guidance</a></li>
+                <li><a href="#">About Us</a></li>
+                <!-- <li><a href="#" class="btn-primary">Login</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transforming Wellness Through Innovation</h1>
+                <p>Experience the future of healthcare with AI-powered consultations and personalized wellness solutions.</p>
+                <a href="#" class="btn-primary">Get Started Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="/images/DALL·E 2025-03-16 11.47.47 - A modern and clean wellness technology platform homepage banner. It features a futuristic AI-powered healthcare assistant represented by a friendly ro.webp" alt="Tech-powered wellness journey" class="styled-hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Assessment Section -->
+    <section class="health-assessment" id="health-assessment">
+        <div class="container">
+            <div class="section-header">
+                <h2>Free Health Assessment</h2>
+                <p>Take our quick assessment to receive personalized wellness recommendations</p>
+            </div>
+            <div class="assessment-preview">
+                <div class="assessment-card">
+                    <div class="assessment-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Comprehensive Health Check</h3>
+                    <p>Answer a few questions about your lifestyle, habits, and health goals to receive a personalized wellness score and recommendations.</p>
+                    <ul class="assessment-benefits">
+                        <li><i class="fas fa-check"></i> Takes only 3 minutes</li>
+                        <li><i class="fas fa-check"></i> Covers physical & mental wellness</li>
+                        <li><i class="fas fa-check"></i> Personalized recommendations</li>
+                        <li><i class="fas fa-check"></i> Track progress over time</li>
+                    </ul>
+                    <button id="start-assessment" class="btn-primary">Start Assessment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Assessment Modal -->
+    <div id="assessment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Health Assessment</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Assessment Form -->
+                <div id="assessment-form" class="assessment-step active">
+                    <div class="progress-bar">
+                        <div class="progress" id="assessment-progress"></div>
+                    </div>
+                    <div class="question-container" id="question-container">
+                        <!-- Questions will be inserted here by JavaScript -->
+                    </div>
+                    <div class="assessment-navigation">
+                        <button id="prev-question" class="btn-secondary" disabled>Previous</button>
+                        <button id="next-question" class="btn-primary">Next</button>
+                    </div>
+                </div>
+
+                <!-- Assessment Results -->
+                <div id="assessment-results" class="assessment-step">
+                  <div class="results-header">
+                      <h3>Your Wellness Score</h3>
+                      <div class="score-circle">
+                          <span id="wellness-score">0</span>
+                          <span class="score-max">/100</span>
+                      </div>
+                  </div>
+                  <div class="results-breakdown">
+                      <h4>Your Wellness Breakdown</h4>
+                      <div class="score-categories">
+                          <div class="score-category">
+                              <span class="category-name">Physical Health</span>
+                              <div class="category-bar">
+                                  <div id="physical-score" class="category-progress" style="width: 0;"></div>
+                              </div>
+                              <span id="physical-percent">0%</span>
+                          </div>
+                          <div class="score-category">
+                              <span class="category-name">Nutrition</span>
+                              <div class="category-bar">
+                                  <div id="nutrition-score" class="category-progress" style="width: 0;"></div>
+                              </div>
+                              <span id="nutrition-percent">0%</span>
+                          </div>
+                          <div class="score-category">
+                              <span class="category-name">Sleep Quality</span>
+                              <div class="category-bar">
+                                  <div id="sleep-score" class="category-progress" style="width: 0;"></div>
+                              </div>
+                              <span id="sleep-percent">0%</span>
+                          </div>
+                          <div class="score-category">
+                              <span class="category-name">Stress Management</span>
+                              <div class="category-bar">
+                                  <div id="stress-score" class="category-progress" style="width: 0;"></div>
+                              </div>
+                              <span id="stress-percent">0%</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="recommendations">
+                      <h4>Your Personalized Recommendations</h4>
+                      <div id="recommendations-list">
+                          <!-- Recommendations will be inserted here by JavaScript -->
+                      </div>
+                  </div>
+                  <div class="results-actions">
+                      <button id="email-results" class="btn-secondary">Email My Results</button>
+                      <button id="detailed-plan" class="btn-primary">Get Detailed Plan</button>
+                  </div>
+              </div>
+              
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Overview -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Features</h2>
+                <p>Discover how we're revolutionizing wellness</p>
+            </div>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Consultation</h3>
+                    <p>Book doctor consultations, chat with our AI assistant, and receive real-time health insights.</p>
+                </div>
+                <div class="feature-card" onclick="window.location.href='/ecommerce/index.html';">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Smart Commerce for Wellness</h3>
+                    <p>Get personalized product recommendations based on your health profile and lifestyle needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Lifestyle Guidance</h3>
+                    <p>Receive customized advice on nutrition, exercise, and mental wellness tailored to your goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Quick Links -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <h2>Find What You Need</h2>
+                <div class="search-box">
+                    <input type="text" placeholder="Search health topics, products, or services...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="quick-links">
+                    <a href="#" class="quick-link"><i class="fas fa-user-md"></i> Find a Doctor</a>
+                    <a href="#" class="quick-link"><i class="fas fa-shopping-bag"></i> Explore Products</a>
+                    <a href="#health-assessment" class="quick-link"><i class="fas fa-clipboard-check"></i> Health Assessment</a>
+                    <a href="#" class="quick-link"><i class="fas fa-question-circle"></i> FAQs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Section -->
+   
+<section class="interactive-section">
+  <div class="container">
+      <div class="section-header">
+          <h2>Experience Our AI Assistant</h2>
+          <p>Try a preview of our conversational wellness guide</p>
+      </div>
+      <div class="chatbot-preview">
+          <div class="chat-container">
+              <div class="chat-header">
+                  <h3><i class="fas fa-robot"></i> WellTech Assistant</h3>
+              </div>
+              <div class="chat-messages" id="chat-messages">
+                  <div class="message bot-message">
+                      <p>Hello! I'm your wellness assistant. How can I help you today?</p>
+                  </div>
+              </div>
+              <div class="chat-input">
+                  <input type="text" id="user-input" placeholder="Ask about health, wellness, or products...">
+                  <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+    <!-- Testimonials & Trust Elements -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Real stories from people who transformed their wellness journey</p>
+            </div>
+            <div class="testimonial-slider" id="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"The AI consultations have been incredibly helpful. I got personalized advice that actually worked for my lifestyle!"</p>
+                        <div class="testimonial-author">
+                            <img src="./images/WhatsApp Image 2025-03-16 at 11.24.58_1364dc1b.jpg" alt="Sarah J.">
+                            <div>
+                                <h4>Sarah J.</h4>
+                                <p>Wellness Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"The product recommendations were spot-on. It's like having a personal wellness shopper who knows exactly what I need."</p>
+                        <div class="testimonial-author">
+                            <img src="./images/WhatsApp Image 2025-03-16 at 11.23.36_c6bc18e8.jpg" alt="Michael T.">
+                            <div>
+                                <h4>Michael T.</h4>
+                                <p>Fitness Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"I've tried many wellness platforms, but this one truly understands the connection between technology and health."</p>
+                        <div class="testimonial-author">
+                            <img src="/images/WhatsApp Image 2025-03-16 at 11.34.56_37ef5c25.jpg" alt="Elena R.">
+                            <div>
+                                <h4>Elena R.</h4>
+                                <p>Healthcare Professional</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button id="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button id="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="trust-counters">
+                <div class="counter">
+                    <h3 id="consultation-counter">0</h3>
+                    <p>Consultations Completed</p>
+                </div>
+                <div class="counter">
+                    <h3 id="customer-counter">0</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="counter">
+                    <h3 id="product-counter">0</h3>
+                    <p>Wellness Products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Representation -->
+    <section class="visual-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>See How It Works</h2>
+                <p>A seamless journey to better wellness</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <!-- <div class="step-image">
+                        <img src="" alt="">
+                    </div> -->
+                    <h3>Create Your Profile</h3>
+                    <p>Sign up and complete your health profile for personalized recommendations.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <!-- <div class="step-image">
+                        <img src="" alt="">
+                    </div> -->
+                    <h3>Consult with AI</h3>
+                    <p>Get instant guidance or schedule a consultation with a healthcare professional.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    
+                    <h3>Personalized Wellness</h3>
+                    <p>Receive tailored recommendations and track your progress over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-To-Action Sections -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Wellness Journey?</h2>
+                <p>Join thousands of users who have already improved their health and lifestyle.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary">Consult Now</a>
+                    <a href="#" class="btn-secondary">Shop Wellness</a>
+                    <a href="#health-assessment" class="btn-tertiary">Take Health Assessment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>WellTech</h2>
+                    <p>Transforming Wellness Through Innovation</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">AI Consultations</a></li>
+                            <li><a href="#">Wellness Products</a></li>
+                            <li><a href="#health-assessment">Health Assessment</a></li>
+                            <li><a href="#">Lifestyle Guidance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest wellness tips and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellTech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/remove-markdown@0.3.0/remove-markdown.min.js"></script> -->
+    <script src="script.js"></script>
+</body>
+</html>
